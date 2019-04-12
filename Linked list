@@ -92,6 +92,6 @@ int main() {
 	L.reverse();
 	L.print();
 
-	system("pause");
+	system("pause"); 
 	return 0;
 }
