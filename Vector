@@ -36,7 +36,7 @@ int main() {
 	cout << "vector capacity: " << V.capacity() << endl;	//cap=2^floor(log n)
 	cout << "empty: " << V.empty() << endl;					//1true 0false
 	cout << "capacity: " << V.capacity() << endl;
-	//V.clear();											//clear all
+	//V.clear();	 										//clear all
 	
 	system("pause");
 	return 0;
