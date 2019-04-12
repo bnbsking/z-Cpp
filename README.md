@@ -1,4 +1,4 @@
-Please type the "Branches" botttom to access following section:
+Please type the "Branch" botttom to access following section:
 
 1. Basic
 2. Iteration and Recursion
