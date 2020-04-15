@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+class Animal{
+    public:
+        string name = "corgi";
+        int leg = 4;
+        void print(){
+            cout << "name=" << name << endl;
+            cout << "leg=" << leg << endl;
+        }
+        void bark();
+};
+void Animal::bark(){
+    cout << "woof!!!" << endl;
+}
+
+class Fruit{
+    public:
+        string name;
+        Fruit(string x){
+            name = x;
+            cout << "This is an " << x << endl;
+        }
+};
+
+
+int main() {
+    Animal obj;
+    obj.print();
+    cout << "obj.name=" << obj.name << endl;
+    cout << "obj.leg=" << obj.leg << endl;
+    obj.bark();
+
+    Fruit obj2("apple");
+    cout << obj2.name << endl;
+}
