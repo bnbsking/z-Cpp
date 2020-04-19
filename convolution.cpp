@@ -1,16 +1,16 @@
-# include <iostream> // input output stream ¿é¤J¿é¥X¸ê®Æ¬y 
+# include <iostream> // input output stream è¼¸å…¥è¼¸å‡ºè³‡æ–™æµ 
 # include <vector>
-using namespace std; // ¨¾¤î¨ç¼Æ¦WºÙ­«½Æ, ­Y¨S¼g«h­n¥Î std:: 
+using namespace std; // é˜²æ­¢å‡½æ•¸åç¨±é‡è¤‡, è‹¥æ²’å¯«å‰‡è¦ç”¨ std:: 
 
 /*
-Generate x sequence¡Gx = [0 1 0 1 1 1 0 1 0] and 
-    h sequence¡Gh = [5 4 3 2 1]
-Convolution ¡G y = conv_inC(x, h);
+Generate x sequenceï¼šx = [0 1 0 1 1 1 0 1 0] and 
+    h sequenceï¼šh = [5 4 3 2 1]
+Convolution ï¼š y = conv_inC(x, h);
 Verify with MATLAB conv and print out the result.
 */
 
-//input µuvector<int> mºû, ªøvector<int> nºû 
-//output vector<int> m+n-1ºû 
+//input çŸ­vector<int> mç¶­, é•·vector<int> nç¶­ 
+//output vector<int> m+n-1ç¶­ 
 
 vector<int> conv(vector<int> h, vector<int> x){
 	int m = h.size();
