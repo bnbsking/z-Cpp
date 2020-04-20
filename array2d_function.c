@@ -46,7 +46,7 @@ int main(){
 	free(darr);
 	
 	int sarr2[2][4] = {0};
-	int* ptr[2];	//«ü¼Ğ°}¦C 
+	int* ptr[2];	//Â«Ã¼Â¼ÃÂ°}Â¦C 
 	ptr[0] = sarr2;
 	ptr[1] = sarr2[1];
 	print_arr_2(ptr, 2, 4);
