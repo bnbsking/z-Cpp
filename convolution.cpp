@@ -101,6 +101,21 @@ typedef struct{
     float im;
 }Complex;
 
+void p(Complex* arr){
+    int i=0;
+    for(i=0; i<5; i++){
+        printf("%f+%fi \n", arr[i].re, arr[i].im);
+    }
+}
+
+Complex* tw(Complex* arr){
+    int i=0;
+    for(i=0; i<5; i++){
+        arr[i].re*=2;
+        arr[i].im*=2;
+    }
+    return arr; 
+}
 
 int main()
 {
@@ -116,6 +131,9 @@ int main()
     for(i=0; i<5; i++){
         printf("%f+%fi \n", arr[i].re, arr[i].im);
     }
+    p(arr);
+    Complex* A = tw(arr);
+    p(A);
     
     return 0;
 }
