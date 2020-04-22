@@ -53,3 +53,69 @@ int main(){
 	vector<int> result = conv(h,x);
 	for(int i=0; i<=result.size(); i++) cout << result[i] << " ";
 } 
+--------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+
+int* convolution(int* h, int m, int* x, int l){
+    int* c = malloc((l-m)*sizeof(int));
+    int i=0;
+    for(i=0; i<l; i++){
+		int sum = 0;
+		for(int j=0; j<m; j++){
+			sum = sum + h[m-j-1]*x[m-j-1+i];
+		}
+		c[i] = sum;
+	}
+    return c;
+}
+
+int main()
+{
+    int i=0;
+    
+    int m=5;
+    int* h = malloc(m*sizeof(int));
+    h[0] = 5; h[1] = 4; h[2] = 3; h[3] = 2; h[4] = 1;
+    
+    int n=9, l=n+m*2-2; //17
+    int* x = malloc(l*sizeof(int));
+    for(i=0; i<m-1; i++) x[i] = 0; //0~3 補0
+    x[m-1] = 0; x[m] = 1; x[m+1] = 0; x[m+2] = 1; x[m+3] = 1;
+    x[m+4] = 1; x[m+5] = 0; x[m+6] = 1; x[m+7] = 0; //4~12 x
+    for(i=n+m-1; i<l; i++) x[i] = 0; //13~16 補0
+    
+    int* c = convolution(h, m, x, l);
+    for(i=0; i<n+m-1; i++) printf("%d ", c[i]);
+    
+    return 0;
+}
+
+------------------------------------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct{
+    float re;
+    float im;
+}Complex;
+
+
+int main()
+{
+    int i=0;
+    printf("%ld \n", sizeof(Complex));
+    
+    Complex* arr = malloc(5*sizeof(Complex));
+    for(i=0; i<5; i++){
+        arr[i].re = i;
+        arr[i].im = i*2;
+    }
+    
+    for(i=0; i<5; i++){
+        printf("%f+%fi \n", arr[i].re, arr[i].im);
+    }
+    
+    return 0;
+}
