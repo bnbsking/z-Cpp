@@ -43,26 +43,29 @@ down %8=0,1,2,3 %8<4
 up   %8=4,5,6,7
 */
 
-int** snake(int n){
-    int** snake = malloc(n*sizeof(int*));
-    for(i=0; i<n; i++) snake[i] = malloc(n*sizeof(int));
+int** snake(int m){
+    int** snake = malloc(m*sizeof(int*));
+    for(i=0; i<m; i++) snake[i] = malloc(m*sizeof(int));
     
-    for(i=0; i<n*n; i++){
-        if(i%(2*n)<n) snake[i%n][i/n] = i;
-        else snake[n-1-i%n][i/n] = i;
+    for(i=0; i<m*m; i++){
+        if(i%(2*m)<m) snake[i%m][i/m] = i;
+        else snake[m-1-i%m][i/m] = i;
     }
-    return snake;   
+    return snake;
 }
 
-int* map(int i, int j, int m){
+/*int* map(int i, int j, int m){
     int* vec = malloc(2*sizeof(int));
     vec[0] = m  +j;
     vec[1] = m  -i;
     return vec;
 }
-
 double dist(int x1, int y1, int x2, int y2){
     return sqrt(pow(x1-x2,2)+pow(y1-y2,2));
+}*/
+
+int nearst(double x, double y){
+    return 0;
 }
 
 int main()
