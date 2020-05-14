@@ -54,6 +54,17 @@ int** snake(int n){
     return snake;   
 }
 
+int* map(int i, int j, int m){
+    int* vec = malloc(2*sizeof(int));
+    vec[0] = m  +j;
+    vec[1] = m  -i;
+    return vec;
+}
+
+double dist(int x1, int y1, int x2, int y2){
+    return sqrt(pow(x1-x2,2)+pow(y1-y2,2));
+}
+
 int main()
 {
     int n=3;
