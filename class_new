@@ -1,37 +1,32 @@
 #include <iostream>
 using namespace std;
 
-class Animal{
+class Car{
     public:
-        string name = "corgi";
-        int leg = 4;
-        void print(){
-            cout << "name=" << name << endl;
-            cout << "leg=" << leg << endl;
-        }
-        void bark();
-};
-void Animal::bark(){
-    cout << "woof!!!" << endl;
-}
-
-class Fruit{
-    public:
-        string name;
-        Fruit(string x){
-            name = x;
-            cout << "This is an " << x << endl;
+        int wheel;
+        int price;
+        Car(int x, int y){
+            wheel = x;
+            price = y;
         }
 };
 
+class Bike{
+    public:
+        int wheel, price;
+        Bike(int x, int y): wheel(x), price(y){
+            cout << "wheel=" << wheel << endl;
+        }
+};
 
-int main() {
-    Animal obj;
-    obj.print();
-    cout << "obj.name=" << obj.name << endl;
-    cout << "obj.leg=" << obj.leg << endl;
-    obj.bark();
+int main(){
+    Car bus(8,100);
+    bus.price = 200;
+    cout << bus.wheel << " " << bus.price << endl;
+    
+    Car* taxi = new Car(4,25);
+    taxi->price = 50;
+    cout << taxi->wheel << " " << taxi->price << endl;
 
-    Fruit obj2("apple");
-    cout << obj2.name << endl;
+    Bike giant(2,1);
 }
