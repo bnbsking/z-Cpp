@@ -13,6 +13,7 @@ Define include外部套件
 gcc 外部參數 組合語言 編譯原理
 
 C++
+namespace
 for(int i=0)
 call by reference
 new/delete
@@ -20,7 +21,8 @@ function/method overloading
 class
   constructor/default value
   encapsulation private
-  
+  ?polymorphism
+  ?abstract
 
 遞迴
 DP
