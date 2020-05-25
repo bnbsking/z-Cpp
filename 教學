@@ -23,6 +23,9 @@ class
   encapsulation private
   ?polymorphism
   ?abstract
+STL
+  vector
+  hashmap
 
 遞迴
 DP
