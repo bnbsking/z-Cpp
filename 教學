@@ -1,15 +1,18 @@
-環境、變數
-	stdio、型態、sizeof、operators
-	+:數字_數字/字元/地址 已宣告字串+字串
-條件式、迴圈
-	if、while、for、switch、local/global
-靜態陣列
-	A[]、A[][]、char[]
-函數
-	call by value/address/reference、recursion
+C
+輸入 輸出 型態(含地址)
++ - * / % ^ 強制轉型
+流程控制 && || == ！= break continue
 指標
-	指標與靜態陣列
-	指標與動態陣列/Vector
-	函數傳入陣列: 一定要傳入指標和size、可用void
-	函數傳出陣列: 一定要用動態記憶體
+陣列
+區域全域變數
+函數
+math.h
+隨機
+typedef struct
+Define include外部套件
+gcc 外部參數 組合語言 編譯原理
 
+遞迴
+DP
+hash
+LinkedList Tree Graph
