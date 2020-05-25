@@ -5,12 +5,22 @@ C
 指標
 陣列
 區域全域變數
-函數
+函數 輸入 輸出 call by value/address
 math.h
 隨機
 typedef struct
 Define include外部套件
 gcc 外部參數 組合語言 編譯原理
+
+C++
+for(int i=0)
+call by reference
+new/delete
+function/method overloading
+class
+  constructor/default value
+  encapsulation private
+  
 
 遞迴
 DP
