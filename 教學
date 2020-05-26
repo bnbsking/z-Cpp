@@ -25,11 +25,11 @@ class
     abstract     parent某method只寫好名字，等待不同子class去polymorphism
 STL
   order
-    queue
-    vector/stack
-    list  (linked list)
+    queue                 push(1)  pop()
+    vector/stack          push_back(1)  pop_back()
+    list  (double linked list)  push_front(1) push_back(1) pop_front() pop_back()
   unorder
-    unordered_map (hash)
+    unordered_map (hash)  
     unordered_set (set)
 
 遞迴
