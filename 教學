@@ -25,13 +25,12 @@ class
     abstract     parent某method只寫好名字，等待不同子class去polymorphism
 STL
   order
-    stack
     queue
-    vector
+    vector/stack
     list  (linked list)
-    //set   (RBtree)
   unorder
-    map
+    unordered_map (hash)
+    unordered_set (set)
 
 遞迴
 DP
