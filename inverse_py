@@ -1,0 +1,46 @@
+def cofactor(A, row, col):
+    n = len(A)-1
+    C = np.zeros((n,n))
+    for i in range(n):
+        for j in range(n):
+            ai = i+1 if i>=row else i
+            aj = j+1 if j>=col else j
+            C[i][j] = A[ai][aj]
+    return C
+
+def det(A):
+    if len(A)==1:
+        return A[0][0]
+    else:
+        s = 0
+        for i in range(len(A)):
+            s = s + (-1)**i*A[0][i]*det(cofactor(A,0,i))
+        return s
+
+def transpose(A):
+    n = len(A)
+    C = np.zeros((n,n))
+    for i in range(n):
+        for j in range(n):
+            C[i][j] = A[j][i]
+    return C
+
+def inverse(A):
+    n = len(A)
+    C = np.zeros((n,n))
+    for i in range(n):
+        for j in range(n):
+            C[i][j] = (-1)**(i+j)*det(cofactor(A,i,j))
+    C = transpose(C)/det(A)
+    return C
+
+def matrixMultiplication(A,B):
+    m, n, p = len(A), len(A[0]), len(B[0])
+    C = np.zeros((m,p))
+    for i in range(m):
+        for j in range(p):
+            s = 0
+            for k in range(n):
+                s+=A[i][k]*B[k][j]
+            C[i][j] = s
+    return C
