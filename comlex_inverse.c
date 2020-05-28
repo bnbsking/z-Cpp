@@ -158,5 +158,8 @@ int main()
     Complex** x = pseudoInverse(M,y,3,3);
     print2D(x,3,1);
     
+    Complex** y_ = matrixMult(M,x,3,3,1);
+    print2D(y_,3,1);
+    
     return 0;
 }
