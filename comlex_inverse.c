@@ -32,8 +32,8 @@ void print2D(Complex** A, int row, int col){
     int i, j;
     for(i=0; i<row; i++){
         for(j=0; j<col; j++){
-            if(A[i][j].im>=0) printf("%.2lf+%.2lf ", A[i][j].re, A[i][j].im);
-            else printf("%.2lf%.2lf ", A[i][j].re, A[i][j].im);
+            if(A[i][j].im>=0) printf("%.2lf+%.2lfi ", A[i][j].re, A[i][j].im);
+            else printf("%.2lf%.2lfi ", A[i][j].re, A[i][j].im);
         }
         printf("\n");
     }
@@ -121,11 +121,10 @@ Complex** hConj(Complex** A, int m, int n){
 Complex** pseudoInverse(Complex** A, Complex** y, int m, int n){
 	Complex** left = inverse(matrixMult(hConj(A, m, n), A, n, m, n), n);
 	Complex** right = matrixMult(hConj(A, m, n), y, n, m, 1);
-	Complex** ans;
+	Complex** ans = matrixMult(left, right, n, n, 1);
 	return ans;
 }
     
-
 int main()
 {
     Complex** M = zeroMatrix(3,3);
@@ -151,6 +150,13 @@ int main()
     
     Complex** E = matrixMult(M, I, 3,3,3);
     print2D(E, 3,3);
+    
+    Complex** y = zeroMatrix(3,1);
+    for(i=0; i<3; i++) y[i][0].re=i*i+1;
+    print2D(y,3,1);
+    
+    Complex** x = pseudoInverse(M,y,3,3);
+    print2D(x,3,1);
     
     return 0;
 }
