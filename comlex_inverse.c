@@ -42,12 +42,12 @@ void print2D(Complex** A, int row, int col){
 
 Complex** zeroMatrix(int row, int col){
     Complex** C = malloc(row*sizeof(Complex*));
-    int i;
-    for(i=0; i<row; i++) C[i] = malloc(col*sizeof(Complex));
+    int i,j;
+    for(i=0; i<row; i++) C[i] = calloc(col, sizeof(Complex));
     return C;
 }
 
-Complex* cofactor(Complex** A, int n, int row, int col){
+Complex** cofactor(Complex** A, int n, int row, int col){
     Complex** C = zeroMatrix(n-1, n-1);
     int i, j, ai, aj;
     for(i=0; i<n-1; i++){
@@ -94,7 +94,38 @@ Complex** inverse(Complex** A, int n){
     }
     return C;
 }
-/**/
+
+Complex** matrixMult(Complex** A, Complex** B, int m, int n, int p){
+    Complex** C = zeroMatrix(m,p);
+    int i,j,k;
+    for(i=0; i<m; i++){
+        for(j=0; j<p; j++){
+            for(k=0; k<n; k++) C[i][j] = Csum(C[i][j], Cprod(A[i][k], B[k][j]));
+        }
+    }
+    return C;
+}
+
+Complex** hConj(Complex** A, int m, int n){
+	Complex** C = zeroMatrix(n,m);
+	int i,j;
+	for(i=0; i<n; i++){
+		for(j=0; j<m; j++){
+			C[i][j].re = A[j][i].re;
+			C[i][j].im = -A[j][i].im;
+		}
+	}
+	return C;
+}
+
+Complex** pseudoInverse(Complex** A, Complex** y, int m, int n){
+	Complex** left = inverse(matrixMult(hConj(A, m, n), A, n, m, n), n);
+	Complex** right = matrixMult(hConj(A, m, n), y, n, m, 1);
+	Complex** ans;
+	return ans;
+}
+    
+
 int main()
 {
     Complex** M = zeroMatrix(3,3);
@@ -117,6 +148,9 @@ int main()
     
     Complex** I = inverse(M, 3);
     print2D(I,3,3);/**/
+    
+    Complex** E = matrixMult(M, I, 3,3,3);
+    print2D(E, 3,3);
     
     return 0;
 }
