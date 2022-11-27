@@ -1,0 +1,2 @@
++ install vscode -> create folder -> open folder by vscode and edit code -> install C/C++ Extension Pack
+
